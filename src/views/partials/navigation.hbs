@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">Jeli App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+
+                <a class="nav-item nav-link" href="/about">About</a>
+
+            </div>
+        </div>
+        <ul>
+            <ul class="navbar-nav ml-auto">
+                  {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/product">All Products</a>
+                        <a class="dropdown-item" href="/product/add">Add A Product</a>
+                        <a class="dropdown-item" href="/users/logout">Log out</a>
+                    </div>
+                </li>
+                {{else}}
+                <li>
+                    <a href="/users/signIn" class="nav-link">Login</a>
+                </li>
+                <li>
+                    <a href="/users/signUp" class="nav-link">Register</a>
+                </li>
+              {{/if}}  
+             </ul>
+        </ul>
+    </div>
+</nav>
